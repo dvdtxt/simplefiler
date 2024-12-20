@@ -1,0 +1,32 @@
+body {
+    font-family: 'Consolas', monospace;
+    background-color: #f0f4f9;
+    margin: 20px;
+}
+
+h1 {
+    color: #4b4a4a;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #ae7edf;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #8549c1;
+}
+
+.folder {
+    font-weight: bold;
+}

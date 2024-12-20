@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 📂 </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Mostrando ficheros en: {{ current_path or '/' }}</h1>
+    {% if current_path %}
+    <p><a href="{{ url_for('index', path=current_path.rsplit('/', 1)[0] if '/' in current_path else '') }}"> <<-- </a></p>
+    {% endif %}
+    <ul>
+        {% for folder, relative_path in subfolders %}
+        <li class="folder">
+            <a href="{{ url_for('index', path=relative_path) }}">{{ folder }}/</a>
+        </li>
+        {% endfor %}
+        {% for file, relative_path in files %}
+        <li>
+            <a href="{{ url_for('download_file', path=relative_path) }}" download>{{ file }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
